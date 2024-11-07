@@ -1,0 +1,18 @@
+<main>
+  <section class="speakers-section">
+    {{#each speakers}}
+      <div class="single-speakerBox">
+        <figure class="speaker-box">
+          <img src={{surl}} alt="speaker-image" class="speaker-image" />
+          <figcaption class="speaker-name">{{sname}}</figcaption>
+        </figure>
+        <div class="speaker-details">
+
+          <span class="which-company">{{scompany}}</span>
+          <span class="which-position">{{sposition}}</span>
+          <span class="which-place">{{splace}}</span>
+        </div>
+      </div>
+    {{/each}}
+  </section>
+</main>

@@ -1,0 +1,70 @@
+<main>
+  <div id="principal">
+    {{#if users.userid}}
+      <h1 class="new-event">Modify user</h1>
+    {{else}}
+      <h1  class="new-event">New user</h1>
+    {{/if}}
+    <div id="first_div" class="login_form">
+        {{#if users.userid}}
+        <form action="/users/modify/{{users.userid}}" method="POST"> 
+      {{else}}
+        <form action="/users/new" method="POST">
+      {{/if}}
+      
+        <div id="entry-field">
+          <label for="Name" class="username">Name</label>
+          <input
+            type="text"
+            placeholder="Enter Name"
+            class="input-field"
+            name="name"
+            required="required"
+            {{#if users.name}} value="{{users.name}}" {{/if}}
+          />
+          <label for="email" class="username">Email</label>
+          <input
+            type="text"
+            placeholder="Enter email"
+            class="input-field"
+            name="email"
+            required="required"
+            {{#if users.email}} value="{{users.email}}" {{/if}}
+          />
+          <label for="phonenumber" class="username">Phone-number</label>
+          <input
+            type="text"
+            placeholder="Phone-number"
+            class="input-field"
+            name="phonenumber"
+            required="required"
+            {{#if users.phonenumber}} value="{{users.phonenumber}}" {{/if}}
+          />
+          <label for="username" class="username">Username</label>
+          <input
+            type="text"
+            placeholder="username"
+            class="input-field"
+            name="username"
+             required="required"
+            {{#if users.username}} value="{{users.username}}" {{/if}}
+          />
+          <label for="password" class="password">Password</label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            class="input-field"
+            name="password"
+            required="required"
+            {{#if users.password}} value="{{users.password}}" {{/if}}
+          />
+           <input type="submit" class="submit-button"
+            value = {{#if users.userid}} "Modify user"{{else}} "Register new user"{{/if}}
+          />
+          
+        </div>
+      </form>
+    </div>
+  </div>
+
+</main>

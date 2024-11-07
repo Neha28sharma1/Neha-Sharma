@@ -1,0 +1,33 @@
+<main>
+  <div id="first_div" class="login_form">
+    <form action="/login" method="post">
+      <div id="entry-field">
+        <label for="username" class="username">Username</label>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          class="input-field"
+          name="username"
+        />
+        <label for="password" class="password">Password</label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          class="input-field"
+          name="password"
+        />
+        <button type="submit" class="submit-button">login</button>
+        {{! <label>
+          <input type="checkbox" checked="checked" name="remember" />
+          Remember me
+        </label> }}
+      </div>
+    </form>
+  </div>
+  {{#if error}}
+    <div class="error">{{error}}</div>
+  {{/if}}
+  {{#if message}}
+    <div class="error">{{message}}</div>
+  {{/if}}
+</main>

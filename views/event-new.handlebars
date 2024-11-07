@@ -1,0 +1,75 @@
+<main>
+  <div id="principal">
+    {{#if events.eid}} 
+        <h1 class="new-event">Modify event</h1> 
+    {{else}} 
+        <h1  class="new-event">New event</h1> 
+    {{/if}}
+    
+    <div id="first_div" class="login_form">
+      {{#if events.eid}}
+        <form action="/events/modify/{{events.eid}}" method="POST">
+      {{else}}
+        <form action="/events/new" method="POST">
+      {{/if}}
+      
+        <div id="entry-field">
+          <label for="eventname" class="username">Event Name:</label>
+          <input
+            type="text"
+            placeholder="Enter Event name"
+            class="input-field"
+            name="eventname"
+            required
+            {{#if events.ename}} value="{{events.ename}}" {{/if}}
+          />
+
+          <label for="eventdesc" class="password">Description:</label>
+          <textarea name="eventdesc" class="input-field" required>{{#if events.edesc}}{{events.edesc}}{{/if}}</textarea><br />
+
+          <label for="eventdate" class="username">Date:</label>
+          <input
+            type="text"
+            placeholder="Enter Event date"
+            class="input-field"
+            name="eventdate"
+            required
+            {{#if events.edate}} value="{{events.edate}}" {{/if}}
+          />
+
+          <label for="eventtime" class="username">Time:</label>
+          <input
+            type="text"
+            placeholder="Enter Event time"
+            class="input-field"
+            name="eventtime"
+            required
+            {{#if events.etime}} value="{{events.etime}}" {{/if}}
+          />
+
+          <label for="eventplace" class="username">Place:</label>
+          <input
+            type="text"
+            placeholder="Enter Event place"
+            class="input-field"
+            name="eventplace"
+            required
+            {{#if events.eplace}} value="{{events.eplace}}" {{/if}}
+          />
+
+          <input type="submit" class="submit-button"
+            value = {{#if events.eid}} "Modify Event "{{else}} "Create New Event "{{/if}}
+          />
+        </div>
+      </form>
+    </div>
+    
+    {{#if error}}
+      <div class="error">{{error}}</div>
+    {{/if}}
+    
+    {{#if message}}
+      <div class="message">{{message}}</div>
+    {{/if}}
+  </div>
+</main>

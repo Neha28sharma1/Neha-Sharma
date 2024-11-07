@@ -1,0 +1,51 @@
+<main>
+  <h1 id="mainHeadingEvents">Events</h1>
+  
+   {{#if session.isAdmin}}
+    <div class="newEvent-button"><a href="/events/new" class="newEvent-button">New event</a></div>
+  {{/if}}
+  
+  <section class="event-detailsContainer">
+   
+    {{#each events}}
+      <div class="event-box">
+        <div>
+          <a href="/events/{{eid}}" class="event-flex">
+            <h4 class="event-name"> {{ename}}</h4>
+            <p class="event-text1">
+              {{edesc}}</p>
+
+            <div><time class="event-date">
+                <i class="far fa-calendar-check"></i>
+                {{edate}}</time>
+              <span class="fullstop">.</span>
+              <time class="event-time">
+                <i class="far fa-clock"></i>
+                {{etime}}</time>
+              <address class="event-place"><i class="fas fa-map-marker-alt"></i>
+                <span>{{eplace}}</span></address>
+            </div>
+          </a>
+          {{#if ../session.isAdmin}}
+         <div class="main-modify" > <a href="/events/modify/{{eid}}" class="modify">Modify</a>
+         <a href="/events/delete/{{eid}}" class="modify">Delete</a></div>
+          {{/if}}
+        </div>
+      </div>
+      
+    {{/each}}
+
+    <div class="pagination-main">
+
+      {{#if previousPage}}
+        <a href="/events?page={{previousPage}}" class="pagination-link">Previous</a>
+      {{/if}}
+
+      <span class="pagination-link"> Page {{page}}</span>
+      {{#if nextPage}}
+        <a href="/events?page={{nextPage}}" class="pagination-link">Next</a>
+      {{/if}}
+
+    </div>
+  </section>
+</main>

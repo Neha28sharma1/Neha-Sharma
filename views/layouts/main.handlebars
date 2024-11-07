@@ -1,0 +1,137 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/js/main.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Nearby Events</title>
+  </head>
+  <body>
+    <header>
+      <section class="header-container">
+
+        {{! //////////////hamburger menu made with the help of youtube video"https://www.youtube.com/watch?v=aNDqzlAKmZc"///// }}
+
+        <div class="nav-container_hidden">
+          <ul class="list-container">
+            <li class="li-name"><a href="/">Home</a></li>
+            <li class="li-name"><a href="/events">Events</a></li>
+
+            {{! <li class="li-name"><a href="/contact">Join us</a></li> }}
+            <li class="li-name"><a href="/speakers">Speakers</a></li>
+            <li class="li-name"><a href="/partners">Partners</a></li>
+            <li class="li-name"><a href="/about">About Us</a></li>
+            {{#if session.isAdmin}}
+              <li class="li-name"><a href="/users">Users</a></li>
+            {{/if}}
+            {{#if session.isLoggedIn}}
+              <li class="li-name">
+                <a href="/logout">Logout</a></li>
+            {{else}}
+              <li class="li-name"><a href="/login">Login</a></li>
+            {{/if}}
+          </ul>
+        </div>
+
+        <!-- <nav class="nav-bar"> -->
+        <div class="hamburger-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <div class="logo-container">
+          <a href="/" id="logo-link"><img
+              class="logo-image"
+              src="/pics/Black & White Minimalist Signature Personal Brand Logo 2.svg"
+              alt="logo"
+            /></a>
+        </div>
+
+        <figure class="icon-container">
+          <!-- <div class="search_bar1"> -->
+          <div class="display">
+            <input id="search-bar" type="text" placeholder="Search..." />
+            <!-- </div> -->
+            <!-- <div class="sign"> -->
+            <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+            {{#if session.isLoggedIn}}
+
+              <li class="li-name2">
+                Hi,{{session.name}}-<a href="/logout">
+                  Logout</a></li>
+            {{else}}
+              <a href="/register" class="register">Register </a>
+            {{/if}}
+
+            <!-- </div> -->
+          </div>
+        </figure>
+        <!-- </nav> -->
+      </section>
+    </header>
+    {{{body}}}
+    <footer class="footer-nav">
+      <div class="footer-subnav">
+        <p class="footer-main"><a href="#">Company Info</a></p>
+        <div class="footer-subnavcontent">
+          <a href="#">About </a>
+          <a href="#">Career</a>
+
+        </div>
+      </div>
+
+      <div class="footer-subnav">
+        <p class="footer-main"><a href="#">Customer Care</a></p>
+        <div class="footer-subnavcontent">
+          <a href="#">Contact Us</a>
+          <a href="#">About us</a>
+        </div>
+      </div>
+
+      <div class="footer-subnav">
+        <p class="footer-main"><a href="#">Help & Support</a></p>
+        <div class="footer-subnavcontent">
+          <a href="#">Our policies</a>
+          <a href="#">Events</a>
+          <a href="#">Track Events</a>
+        </div>
+      </div>
+
+      <div class="footer-subnav">
+
+        <div class="icons">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <br />
+          <a href="#" class="footer1">&#169; 2024 all rights reserved</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

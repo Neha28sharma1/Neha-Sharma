@@ -1,0 +1,35 @@
+<main>
+
+  {{#each eventsandspeakers}}
+    <section class="detailed-view">
+      <div class="date-time">
+        <time class="event1-date">
+          <i class="far fa-calendar-check"></i>
+          {{edate}}</time>
+        <span class="fullstop">.</span>
+        <time class="event1-time">
+          <i class="far fa-clock"></i>
+          {{etime}}</time>
+        <address class="event1-place">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>{{eplace}}</span>
+        </address>
+      </div>
+      <div class="event1-discription">
+        <h2 id="main-heading">{{ename}}</h2>
+        <p class="event1-details">
+          {{edesc}}
+        </p>
+      </div>
+    </section>
+    <section class="speakers1-section">
+      <div class="single-speakerBox">
+        <figure class="speaker-box">
+          <img src="{{surl}}" alt="speaker-image" class="speaker-image" />
+          <figcaption class="speaker-name">{{sname}}</figcaption>
+        </figure>
+      </div>
+    </section>
+  {{/each}}
+
+</main>

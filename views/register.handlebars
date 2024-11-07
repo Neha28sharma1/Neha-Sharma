@@ -1,0 +1,54 @@
+<main>
+  <div id="first_div" class="login_form">
+    <form action="/register" method="post">
+      <div id="entry-field">
+        <label for="Name" class="username">Name</label>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          class="input-field"
+          name="name"
+        />
+        <label for="email" class="username">Email</label>
+        <input
+          type="text"
+          placeholder="Enter email"
+          class="input-field"
+          name="email"
+        />
+        <label for="phonenumber" class="username">Phone-number</label>
+        <input
+          type="text"
+          placeholder="Phone-number"
+          class="input-field"
+          name="phonenumber"
+        />
+        <label for="username" class="username">Username</label>
+        <input
+          type="text"
+          placeholder="username"
+          class="input-field"
+          name="username"
+        />
+        <label for="password" class="password">Password</label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          class="input-field"
+          name="password"
+        />
+        <button type="submit" class="submit-button">Register</button>
+        {{! <label>
+          <input type="checkbox" checked="checked" name="remember" />
+          Remember me
+        </label> }}
+      </div>
+    </form>
+  </div>
+  {{#if error}}
+    <div class="error">{{error}}</div>
+  {{/if}}
+  {{#if message}}
+    <div class="error">{{message}}</div>
+  {{/if}}
+</main>
